@@ -903,7 +903,7 @@ describe("CascadingConfigArrayFactory", () => {
                             }]
                         },
                         useEslintrc: false
-                    }), /Invalid override pattern/u);
+                    }).getConfigArrayForFile(), /Invalid override pattern/u);
                 });
 
                 it("should not merge override config when the pattern traverses up the directory tree", () => {
@@ -919,7 +919,7 @@ describe("CascadingConfigArrayFactory", () => {
                             }]
                         },
                         useEslintrc: false
-                    }), /Invalid override pattern/u);
+                    }).getConfigArrayForFile(), /Invalid override pattern/u);
                 });
 
                 it("should merge all local configs (override and non-override) before non-local configs", () => {
